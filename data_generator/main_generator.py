@@ -14,7 +14,7 @@ class MainGenerator:
 
         graphs_agg = []
 
-        for i in tqdm(range(1, batch_size+1)):
+        for _ in tqdm(range(1, batch_size+1)):
 
             graphs = self.single_batch()
             graphs_agg.append(graphs)
@@ -27,19 +27,14 @@ class MainGenerator:
         # Initialize an empty list to hold DataFrames
         dfs = []
 
-        # Generate graphs for sizes 10 to 2000, with a step size of 10
-        for size in range(10, 2001, 10):
+        # Generate graphs for sizes 100 to 5000, with a step size of 100
+        for size in range(100, 5001, 100):
+
             graph = np.random.randint(0, 100, size=(size, size))
             np.fill_diagonal(graph, 0)
             df_small = pd.DataFrame({'V': [size], 'graph': [graph]})
             dfs.append(df_small)
 
-        # Generate graphs for sizes 10^4 to 10^5, with a step size of 100
-        # for size in range(10**4, 10**5 + 1, 10**4):
-        #     graph = np.random.randint(0, 100, size=(size, size))
-        #     np.fill_diagonal(graph, 0)
-        #     df_large = pd.DataFrame({'V': [size], 'graph': [graph]})
-        #     dfs.append(df_large)
+        agg = pd.concat(dfs, ignore_index=True)
 
-        final_df = pd.concat(dfs, ignore_index=True)
-        return final_df
+        return agg
