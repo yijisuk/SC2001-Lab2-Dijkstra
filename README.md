@@ -5,7 +5,7 @@ Empirical time complexity comparison on Dijkstra's algorithm's two implementatio
 <br>(b) using a minimizing heap as a priority queue
 
 ## Answering the Questions
-### (a) Theoretical and Empirical Time Complexity Analysis, using a Linear Array
+### 1️⃣ Theoretical and Empirical Time Complexity Analysis, using a Linear Array
 
 **Step 1: Finding the vertex with minimum distance value from the current vertex** 
 
@@ -19,7 +19,7 @@ Empirical time complexity comparison on Dijkstra's algorithm's two implementatio
 
 > Each operation takes **O(V)** time, which is repeated for **V** times, thus the overall time complexity would be **O(V^2)**.
 
-### (b) Theoretical and Empirical Time Complexity Analysis, using a Minimizing Heap
+### 2️⃣ Theoretical and Empirical Time Complexity Analysis, using a Minimizing Heap
 
 **Step 1: Finding the vertex with minimum distance value from the current vertex**
 
@@ -40,7 +40,7 @@ Empirical time complexity comparison on Dijkstra's algorithm's two implementatio
 
 > Step 1 takes **O(VlogV)**, Step 2 takes **O(ElogV)**. Combining both, the overall time complexity would be **O((V+E)logV)**
 
-### (c) Comparison and Recommendation
+### 3️⃣ Comparison and Recommendation
 
 From the theoretical analysis, it's evident that the adjacency matrix with an array approach has a time complexity of $O(V^2)$, while the adjacency list with minimizing heap has a time complexity of $O((V + E) log V)$.  
 
