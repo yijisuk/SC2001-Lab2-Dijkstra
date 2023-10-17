@@ -1,7 +1,6 @@
 import os
 import numpy as np
 import ctypes
-import pandas as pd
 from tqdm import tqdm
 
 from dijkstra_functions.dijkstra_functions import Dijkstra_Functions
@@ -9,10 +8,11 @@ from dijkstra_functions.dijkstra_functions import Dijkstra_Functions
 
 class RuntimeAnalysis:
 
-    def __init__(self, graphs):
+    def __init__(self, prefix, graphs):
 
         self.DF = Dijkstra_Functions()
-        self.base_save_path = os.path.join("data")
+        self.base_save_path = os.path.join("data", prefix)
+        self.prefix = prefix
         self.graphs = graphs
 
         if not os.path.exists(self.base_save_path):
