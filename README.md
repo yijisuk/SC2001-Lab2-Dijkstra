@@ -28,13 +28,13 @@ Empirical time complexity comparison on Dijkstra's algorithm's two implementatio
   > First starting, all vertices should be inserted to the heap. This takes **O(VlogV)** since **V** elements are inserted, and each insertion takes **O(logV)**.
 
 - **Step1-2) Extraction of the minimum element from the heap**
-  > Each extraction (finding the vertex with minimum distance value) from the heap takes **(OlogV) time. Since this is repeated through all vertices, this part takes **O(VlogV)**.
+  > Each extraction (finding the vertex with minimum distance value) from the heap takes **(OlogV)** time. Since this is repeated through all vertices, this part takes **O(VlogV)**.
 
 > The overall time complexity for Step 1 would be **O(VlogV)**.
 
 **Step 2: Updating vertex distance values**
 
-> Updating the distance value of other vertices is done through using *decrease key operation*, which takes **O(logV) time in a binary heap. If all edges are considered the overall time for this operation would be **O(ElogV)**.
+> Updating the distance value of other vertices is done through using *decrease key operation*, which takes **O(logV)** time in a binary heap. If all edges are considered the overall time for this operation would be **O(ElogV)**.
 
 **Overall Time Complexity**
 
